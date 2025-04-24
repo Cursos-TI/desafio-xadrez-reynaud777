@@ -1,32 +1,58 @@
 #include <stdio.h>
 
-// Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
+//recursividade torre
+void torre(int casas){
 
-int main() {
-    // Nível Novato - Movimentação das Peças
-    // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
+    if (casas > 0){
+    printf("Torre: direita\n");
+    torre (casas - 1);
+    }
 
-    // Implementação de Movimentação do Bispo
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
+}
 
-    // Implementação de Movimentação da Torre
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
+//recursividade bispo
+void bispo (int casas){
+    for (int i = 0; i <= 4; i++){ 
+        printf("Bispo: Cima, ");//Loop externo
+        for (int j = 4; j <= 4; j++){
+            printf("Direita\n"); //Loop interno
+        }
+     }
+     
+}
 
-    // Implementação de Movimentação da Rainha
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
+//recursividade rainha
+void rainha (int casas){
+    if (casas > 0){
+        printf("Rainha: Esquerda\n");
+        rainha (casas - 1);
+    }
+}
 
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
 
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
 
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
 
-    return 0;
+int main(){
+
+    printf("**Movimentação de peças de Xadrez**\n\n");
+
+torre (5);
+bispo (5);
+rainha (8);
+
+int cavalo = 1;
+
+printf("Cavalo: ");
+
+//Mover o cavalo 2 casas para cima e 1 para a direita 
+while (cavalo--); //Loop externo
+{
+    for (int i = 0; i < 2; i++){ //Loop interno
+        printf("Cima, ");
+    }
+        printf("Direita\n");
+}
+
+return 0;
+
 }
