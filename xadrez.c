@@ -28,3 +28,28 @@ void rainha (int casas){
         rainha (casas - 1);
     }
 }
+
+int main(){
+
+    printf("**Movimentação de peças de Xadrez**\n\n");
+
+torre (5);
+bispo (5);
+rainha (8);
+
+int cavalo = 1;
+
+printf("Cavalo: ");
+
+//Mover o cavalo 2 casas para cima e 1 para a direita 
+while (cavalo--); //Loop externo
+{
+    for (int i = 0; i < 2; i++){ //Loop interno
+        printf("Cima, ");
+    }
+        printf("Direita\n");
+}
+
+return 0;
+
+}
